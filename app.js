@@ -3,8 +3,10 @@ const app =express();
 const bodyparser = require('body-parser');
 const adminRouter = require('./routes/admin');
 const shopRouter = require('./routes/shop');
+const path = require('path');
 
 app.use(express.urlencoded({extended:true}));
+app.use(express.static(path.join(__dirname,'public')))
 
 app.use(adminRouter);
 
