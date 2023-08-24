@@ -1,12 +1,13 @@
  const path =require('path');
- const express = require('express');
+ const express = require ('express');
  const router = express.Router();
  const rootDir = require('../util/path');
+ const adminData = require('./admin');
 
- router.use('/',(req,res,next)=>{
-    
-    res.sendFile(path.join(rootDir,'views','shop.html'));
-    
+ router.get('/',(req,res,next)=>{
+    // console.log(adminData.products);
+    // res.sendFile(path.join(rootDir,'views','shop.html'));
+    res.render('shop');
 });
 
 
